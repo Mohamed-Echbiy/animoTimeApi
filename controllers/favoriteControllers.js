@@ -12,9 +12,9 @@ const getFavorites = async (req, res) => {
 };
 
 const deleteFavorite = async (req, res) => {
-  const { _id } = req.body;
+  const { id, by } = req.body;
   try {
-    const deleteFavorite = await db.deleteOne({ _id });
+    const deleteFavorite = await db.deleteOne({ id, by });
     res.status(200).json({ msg: "deleted successfully" });
   } catch (error) {
     console.log(error);
