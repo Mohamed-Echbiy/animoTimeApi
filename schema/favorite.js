@@ -13,7 +13,6 @@ const schema = new mongoose.Schema({
   },
   genres: {
     type: [String],
-    required: [true, "you need to add genres property "],
   },
   image: { type: String, required: [true, "you need to add image property"] },
   id: { type: String, required: [true, "you need the id property"] },
