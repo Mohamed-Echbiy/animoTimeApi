@@ -3,7 +3,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const favoritesRoutes = require("./routes/favouritsRoutes");
-
+const commentsRoutes = require("./routes/commentsRoutes");
 //
 
 const app = express();
@@ -16,6 +16,7 @@ app.use(
 );
 app.use(express.json());
 app.use("/", favoritesRoutes);
+app.use("/", commentsRoutes);
 
 mongoose
   .connect(process.env.MONGO_URL)
