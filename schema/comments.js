@@ -14,7 +14,7 @@ const schema = new mongoose.Schema(
       like: [{ id: String }],
     },
     animeEpId: {
-      type: Number,
+      type: String,
       required: [true, "the animeId where the comment about "],
     },
   },
