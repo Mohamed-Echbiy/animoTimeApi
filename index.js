@@ -2,6 +2,7 @@ const express = require("express");
 require("dotenv").config();
 const mongoose = require("mongoose");
 const cors = require("cors");
+const compression = require("compression");
 const favoritesRoutes = require("./routes/favouritsRoutes");
 const commentsRoutes = require("./routes/commentsRoutes");
 //
@@ -9,6 +10,7 @@ const commentsRoutes = require("./routes/commentsRoutes");
 const app = express();
 
 //
+app.use(compression());
 app.use(
   cors({
     origin: ["https://animo-timev3.vercel.app", "http://localhost:3000"],
