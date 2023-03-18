@@ -11,16 +11,7 @@ const app = express();
 
 //
 app.use(compression());
-app.use(
-  cors({
-    origin: [
-      "https://animo-timev3.vercel.app",
-      "http://localhost:3000",
-      "https://animotime.site",
-      "www.aimotime.site",
-    ],
-  })
-);
+app.use(cors());
 app.use(express.json());
 app.use("/", favoritesRoutes);
 app.use("/", commentsRoutes);
