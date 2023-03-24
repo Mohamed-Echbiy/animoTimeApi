@@ -5,6 +5,7 @@ const cors = require("cors");
 const compression = require("compression");
 const favoritesRoutes = require("./routes/favouritsRoutes");
 const commentsRoutes = require("./routes/commentsRoutes");
+const episodeLinksRoute = require("./routes/getEpLinks");
 //
 
 const app = express();
@@ -15,6 +16,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/", favoritesRoutes);
 app.use("/", commentsRoutes);
+app.use("/", episodeLinksRoute);
 
 mongoose
   .connect(process.env.MONGO_URL)
